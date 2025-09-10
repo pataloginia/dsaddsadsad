@@ -1,0 +1,25 @@
+.controls-root {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.group {
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.group h3 { margin: 0 0 8px 0; font-size: 0.95rem; opacity: 0.9; }
+.row { display: grid; grid-template-columns: 90px 1fr; align-items: center; gap: 8px; margin: 8px 0; }
+label { font-size: 0.85rem; opacity: 0.8; }
+select, input[type="range"] { width: 100%; }
+
+@media (max-width: 900px) {
+  .controls-root { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .controls-root { grid-template-columns: 1fr; }
+}
+
