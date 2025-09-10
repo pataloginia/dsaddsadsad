@@ -1,0 +1,54 @@
+.piano-root { position: relative; height: 220px; }
+.white-layer { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(14, 1fr); gap: 2px; padding: 8px; }
+.black-layer { position: absolute; inset: 0; pointer-events: none; display: grid; grid-template-columns: repeat(28, 1fr); padding: 8px; }
+
+.white {
+  pointer-events: auto;
+  background: linear-gradient(180deg, #f7f7fb, #e8e8f2);
+  border: 1px solid rgba(0,0,0,0.15);
+  border-bottom: 4px solid rgba(0,0,0,0.2);
+  border-radius: 8px;
+  box-shadow: inset 0 -8px 16px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.25);
+  position: relative;
+  transition: transform .03s ease, box-shadow .12s ease;
+}
+.white.active { transform: translateY(2px); box-shadow: inset 0 -4px 10px rgba(0,0,0,0.12), 0 4px 10px rgba(0,0,0,0.2); }
+.white:active { transform: translateY(2px); box-shadow: inset 0 -4px 10px rgba(0,0,0,0.12), 0 4px 10px rgba(0,0,0,0.2); }
+.white .label { position: absolute; bottom: 8px; left: 8px; font-size: 10px; opacity: 0.5; }
+
+.black {
+  pointer-events: auto;
+  align-self: stretch;
+  justify-self: stretch;
+  height: 60%;
+  margin: 0 0.5%;
+  background: linear-gradient(180deg, #23242a, #0f1015);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 4px solid rgba(0,0,0,0.5);
+  border-radius: 6px 6px 10px 10px;
+  box-shadow: inset 0 -8px 16px rgba(255,255,255,0.04), 0 10px 20px rgba(0,0,0,0.35);
+  transition: transform .03s ease, box-shadow .12s ease;
+}
+.black.active { transform: translateY(2px); box-shadow: inset 0 -4px 10px rgba(255,255,255,0.04), 0 6px 12px rgba(0,0,0,0.35); }
+.black:active { transform: translateY(2px); box-shadow: inset 0 -4px 10px rgba(255,255,255,0.04), 0 6px 12px rgba(0,0,0,0.35); }
+
+/* approximate positions of black keys over 24 white keys using 28 columns grid */
+.black-layer button { grid-row: 1; }
+.black-layer .pos-1 { grid-column: 3 / span 2; }
+.black-layer .pos-3 { grid-column: 7 / span 2; }
+.black-layer .pos-6 { grid-column: 13 / span 2; }
+.black-layer .pos-8 { grid-column: 17 / span 2; }
+.black-layer .pos-10 { grid-column: 21 / span 2; }
+.black-layer .pos-13 { grid-column: 27 / span 2; }
+.black-layer .pos-15 { grid-column: 31 / span 2; }
+.black-layer .pos-18 { grid-column: 37 / span 2; }
+.black-layer .pos-20 { grid-column: 41 / span 2; }
+.black-layer .pos-22 { grid-column: 45 / span 2; }
+
+@media (max-width: 900px) {
+  .piano-root { height: 180px; }
+}
+@media (max-width: 600px) {
+  .piano-root { height: 160px; }
+}
+

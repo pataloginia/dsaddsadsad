@@ -1,0 +1,76 @@
+/* Modern, gradient-driven, glassy UI styling */
+.studio-root {
+  --accent: 255, 115, 179; /* pink */
+  --bg1: 20, 22, 30;
+  --bg2: 10, 12, 18;
+  --panel: 255, 255, 255;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 220px auto auto auto;
+  gap: 16px;
+  padding: 16px;
+  background: radial-gradient(1200px 700px at 80% -10%, rgba(80,180,255,0.15), rgba(0,0,0,0) 60%),
+              radial-gradient(1000px 700px at 10% -20%, rgba(255,120,180,0.18), rgba(0,0,0,0) 60%),
+              linear-gradient(160deg, rgb(var(--bg1)), rgb(var(--bg2)));
+  color: #e8eaf1;
+}
+
+.studio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+}
+.brand-accent {
+  background: linear-gradient(45deg, rgba(var(--accent),1), #a88bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.primary {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  color: #0b0c10;
+  background: linear-gradient(135deg, #aef1ff, #ffa9d6);
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(255,255,255,0.18);
+  transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+}
+.primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,255,255,0.25); }
+.primary:active { transform: translateY(0); filter: brightness(0.95); }
+
+.visualizer-wrap, .controls-wrap, .piano-wrap {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+}
+
+.visualizer-wrap { display: grid; place-items: center; overflow: hidden; }
+.controls-wrap { padding: 12px; }
+.piano-wrap { padding: 12px; }
+
+.studio-footer {
+  text-align: center;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .studio-root { grid-template-rows: auto 160px auto auto auto; }
+}
+
